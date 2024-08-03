@@ -10,7 +10,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #c08261;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,7 +36,7 @@ a {
 
 header {
   width: 100%;
-  background-color: #4e4e4e;
+  background-color: #9a3b3b;
   font-size: 1.5rem;
 
   h3 {
@@ -70,13 +70,14 @@ main {
   max-width: 60rem;
   min-width: 375px;
   margin: 0 auto;
-  background-color: #2a2a2a;
+  background-color: #e2c799;
   padding: 1rem;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 2rem;
+  color: #9a3b3b;
 }
 
 .pokemon-list {
@@ -88,16 +89,44 @@ h1 {
 }
 
 .pokemon-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 10rem;
   height: 10rem;
-  background-color: #9f9f9f;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ffffff;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #f2ecbe;
+    color: #eeae4d;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition:
+      background-color 300ms ease,
+      color 300ms ease;
+
+    &:hover {
+      background-color: #c08261;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.pokemon-detail-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 480px) {

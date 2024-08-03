@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const PokemonPage = () => {
   const { results: items } = useLoaderData();
@@ -10,7 +10,7 @@ const PokemonPage = () => {
       <ul className="pokemon-list">
         {items.map(({ name }) => (
           <li className="pokemon-item" key={name}>
-            {name}
+            <Link to={`/pokemon/${name}`}>{name}</Link>
           </li>
         ))}
       </ul>
