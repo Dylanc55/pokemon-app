@@ -80,6 +80,28 @@ h1 {
   color: #9a3b3b;
 }
 
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+
+  img {
+    width: 20rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #9a3b3b;
+  }
+}
+
 .pokemon-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, 10rem);

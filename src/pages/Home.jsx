@@ -1,8 +1,10 @@
 const HomePage = () => {
   return (
-    <>
-      <h1>Home Page</h1>
-    </>
+    <section className="home-page">
+      <img src="pokemon.svg" alt="" />
+      <h1>Welcome!</h1>
+      <p>Browse all the original Pokémon</p>
+    </section>
   );
 };
 
