@@ -5,7 +5,7 @@ const PokemonPage = () => {
 
   return (
     <>
-      <h1>Original Pokemon</h1>
+      <h1>Original Pokémon</h1>
 
       <ul className="pokemon-list">
         {items.map(({ name }) => (

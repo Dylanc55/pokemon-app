@@ -4,8 +4,6 @@ import { Await, useLoaderData } from "react-router-dom";
 const PokemonDetailPage = () => {
   const { detail } = useLoaderData();
 
-  console.log("detail :>> ", detail);
-
   return (
     <>
       <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>

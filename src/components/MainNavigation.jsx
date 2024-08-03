@@ -4,7 +4,7 @@ const MainNavigation = () => {
   return (
     <header>
       <nav>
-        <h3>Pokemon</h3>
+        <h3>Pokémon</h3>
 
         <ul>
           <li>
@@ -21,7 +21,7 @@ const MainNavigation = () => {
               to="/pokemon"
               className={({ isActive }) => (isActive ? "active" : undefined)}
             >
-              Pokemon
+              Pokémon
             </NavLink>
           </li>
         </ul>
