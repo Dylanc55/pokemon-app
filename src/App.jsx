@@ -4,6 +4,8 @@ import RootLayout from "./pages/Root";
 import HomePage from "./pages/Home";
 import PokemonPage from "./pages/Pokemon";
 
+import { pokemonLoader } from "./loaders/pokemonLoader";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: "pokemon",
         element: <PokemonPage />,
+        loader: pokemonLoader,
       },
     ],
   },

@@ -4,7 +4,7 @@ const MainNavigation = () => {
   return (
     <header>
       <nav>
-        <h3>Pokemon App</h3>
+        <h3>Pokemon</h3>
 
         <ul>
           <li>

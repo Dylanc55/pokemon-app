@@ -4,14 +4,18 @@ const pokemonSlice = createSlice({
   name: "pokemon",
   initialState: {
     items: [],
+    selected: null,
   },
   reducers: {
-    replaceItems: (state, { payload }) => {
+    setItems: (state, { payload }) => {
       state.items = payload;
+    },
+    setSelected: (state, { payload }) => {
+      state.selected = payload;
     },
   },
 });
 
-export const { replaceItems } = pokemonSlice.actions;
+export const { setItems, setSelected } = pokemonSlice.actions;
 
 export default pokemonSlice.reducer;
