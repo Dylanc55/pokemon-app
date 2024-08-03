@@ -1,17 +1,23 @@
-import { json } from "react-router-dom";
+import { defer, json } from "react-router-dom";
 
-export const pokemonDetailLoader = async ({ params }) => {
-  const name = params.name;
-
+const loadDetail = async (name) => {
   try {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/` + name);
 
     if (!response.ok) {
       throw json({ message: "Could not fetch pokemon details" });
     }
-
-    return response;
+    const data = await response.json();
+    return data;
   } catch (error) {
     throw json({ message: "Something went wrong" });
   }
 };
+
+export async function pokemonDetailLoader({ params }) {
+  const name = params.name;
+
+  return defer({
+    detail: loadDetail(name),
+  });
+}
