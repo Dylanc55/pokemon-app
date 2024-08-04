@@ -1,6 +1,10 @@
 .type {
   font-size: 1.25rem;
   color: #9a3b3b;
+
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 .description {
