@@ -4,6 +4,8 @@ import Grid from "../components/UI/Grid";
 
 import classes from "./Pokemon.module.css";
 
+import humanize from "../utils/humanize";
+
 const PokemonPage = () => {
   const { results: items } = useLoaderData();
 
@@ -14,7 +16,7 @@ const PokemonPage = () => {
       <Grid className={classes.grid}>
         {items.map(({ name }) => (
           <li className={classes.item} key={name}>
-            <Link to={`/pokemon/${name}`}>{name}</Link>
+            <Link to={`/pokemon/${name}`}>{humanize(name)}</Link>
           </li>
         ))}
       </Grid>

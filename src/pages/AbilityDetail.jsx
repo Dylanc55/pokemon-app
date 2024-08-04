@@ -5,6 +5,7 @@ import Card from "../components/UI/Card";
 import Grid from "../components/UI/Grid";
 
 import classes from "./AbilityDetail.module.css";
+import humanize from "../utils/humanize";
 
 const AbilityDetailPage = () => {
   const { ability } = useLoaderData();
@@ -19,7 +20,7 @@ const AbilityDetailPage = () => {
 
           return (
             <section className={classes.ability}>
-              <h1>{name.toUpperCase()}</h1>
+              <h1>{humanize(name).toUpperCase()}</h1>
 
               {!!entry && (
                 <Card>
@@ -30,7 +31,7 @@ const AbilityDetailPage = () => {
               <h3>Generation</h3>
 
               <Card>
-                <p className={classes.content}>{generation.name}</p>
+                <p className={classes.content}>{humanize(generation.name)}</p>
               </Card>
 
               <h3>Pokémon</h3>
@@ -40,7 +41,9 @@ const AbilityDetailPage = () => {
                   {pokemon.map(({ pokemon }) => (
                     <li key={pokemon.name}>
                       <Link to={`/pokemon/${pokemon.name}`}>
-                        <p className={classes.content}>{pokemon.name}</p>
+                        <p className={classes.content}>
+                          {humanize(pokemon.name)}
+                        </p>
                       </Link>
                     </li>
                   ))}

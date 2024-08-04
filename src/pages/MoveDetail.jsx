@@ -5,6 +5,7 @@ import Card from "../components/UI/Card";
 import Grid from "../components/UI/Grid";
 
 import classes from "./MoveDetail.module.css";
+import humanize from "../utils/humanize";
 
 const MoveDetailPage = () => {
   const { move } = useLoaderData();
@@ -27,7 +28,7 @@ const MoveDetailPage = () => {
 
           return (
             <section className={classes.move}>
-              <h1>{name.toUpperCase()}</h1>
+              <h1>{humanize(name).toUpperCase()}</h1>
 
               {!!entry && (
                 <Card>
@@ -41,27 +42,27 @@ const MoveDetailPage = () => {
                 <Grid>
                   {!!accuracy && (
                     <li>
-                      <h4 className={classes.title}>accuracy</h4>
+                      <h4 className={classes.title}>Accuracy</h4>
                       <p className={classes["content-lg"]}>{accuracy}</p>
                     </li>
                   )}
                   {!!power && (
                     <li>
-                      <h4 className={classes.title}>power</h4>
+                      <h4 className={classes.title}>Power</h4>
                       <p className={classes["content-lg"]}>{power}</p>
                     </li>
                   )}
                   <li>
-                    <h4 className={classes.title}>power points</h4>
+                    <h4 className={classes.title}>Power Points</h4>
                     <p className={classes["content-lg"]}>{pp}</p>
                   </li>
                   <li>
-                    <h4 className={classes.title}>damage class</h4>
+                    <h4 className={classes.title}>Damage Class</h4>
                     <p className={classes["content-lg"]}>{damage_class.name}</p>
                   </li>
                   {effect_chance && (
                     <li>
-                      <h4 className={classes.title}>effect chance</h4>
+                      <h4 className={classes.title}>Effect Chance</h4>
                       <p className={classes["content-lg"]}>{effect_chance}</p>
                     </li>
                   )}
@@ -75,7 +76,9 @@ const MoveDetailPage = () => {
                   {learned_by_pokemon.map((pokemon) => (
                     <li key={pokemon.name}>
                       <Link to={`/pokemon/${pokemon.name}`}>
-                        <p className={classes.content}>{pokemon.name}</p>
+                        <p className={classes.content}>
+                          {humanize(pokemon.name)}
+                        </p>
                       </Link>
                     </li>
                   ))}

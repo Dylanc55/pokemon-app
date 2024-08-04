@@ -5,6 +5,7 @@ import Card from "../components/UI/Card";
 import Grid from "../components/UI/Grid";
 
 import classes from "./TypeDetail.module.css";
+import humanize from "../utils/humanize";
 
 const TypeDetailPage = () => {
   const { type } = useLoaderData();
@@ -17,18 +18,14 @@ const TypeDetailPage = () => {
 
           return (
             <section className={classes.type}>
-              <h1>{name.toUpperCase()}</h1>
+              <h1>{humanize(name).toUpperCase()}</h1>
 
               {damageRelations.map(([key, value]) => {
-                let title = key.replaceAll("_", " ");
-                title =
-                  title.substring(0, 1).toUpperCase() + title.substring(1);
-
                 const haveValue = !!value.length;
 
                 return (
                   <div key={key}>
-                    <h3>{title}</h3>
+                    <h3>{humanize(key)}</h3>
 
                     <Card>
                       <Grid>
@@ -42,7 +39,9 @@ const TypeDetailPage = () => {
                                   ""
                                 )}
                               >
-                                <p className={classes.content}>{el.name}</p>
+                                <p className={classes.content}>
+                                  {humanize(el.name)}
+                                </p>
                               </Link>
                             </li>
                           ))}
@@ -61,7 +60,7 @@ const TypeDetailPage = () => {
                       <Link
                         to={move.url.replace("https://pokeapi.co/api/v2", "")}
                       >
-                        <p className={classes.content}>{move.name}</p>
+                        <p className={classes.content}>{humanize(move.name)}</p>
                       </Link>
                     </li>
                   ))}
@@ -75,7 +74,9 @@ const TypeDetailPage = () => {
                   {pokemon.map(({ pokemon }) => (
                     <li key={pokemon.name}>
                       <Link to={`/pokemon/${pokemon.name}`}>
-                        <p className={classes.content}>{pokemon.name}</p>
+                        <p className={classes.content}>
+                          {humanize(pokemon.name)}
+                        </p>
                       </Link>
                     </li>
                   ))}

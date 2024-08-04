@@ -5,6 +5,7 @@ import Card from "../components/UI/Card";
 import Grid from "../components/UI/Grid";
 
 import classes from "./PokemonDetail.module.css";
+import humanize from "../utils/humanize";
 
 const PokemonDetailPage = () => {
   const { detail } = useLoaderData();
@@ -23,7 +24,7 @@ const PokemonDetailPage = () => {
                   />
                 </div>
 
-                <h1>{name.toUpperCase()}</h1>
+                <h1>{humanize(name).toUpperCase()}</h1>
 
                 <div className={classes.placeholder}>
                   <img
@@ -39,7 +40,7 @@ const PokemonDetailPage = () => {
                 <Grid>
                   {stats.map(({ stat, base_stat }) => (
                     <li key={stat.name} className={classes.item}>
-                      <h4 className={classes.title}>{stat.name}</h4>
+                      <h4 className={classes.title}>{humanize(stat.name)}</h4>
                       <p className={classes["content-lg"]}>{base_stat}</p>
                     </li>
                   ))}
@@ -59,7 +60,7 @@ const PokemonDetailPage = () => {
                         )}
                         className={classes["content-sm"]}
                       >
-                        <p>{ability.name}</p>
+                        <p>{humanize(ability.name)}</p>
                       </Link>
                     </li>
                   ))}
@@ -75,7 +76,9 @@ const PokemonDetailPage = () => {
                       <Link
                         to={type.url.replace("https://pokeapi.co/api/v2", "")}
                       >
-                        <p className={classes["content-sm"]}>{type.name}</p>
+                        <p className={classes["content-sm"]}>
+                          {humanize(type.name)}
+                        </p>
                       </Link>
                     </li>
                   ))}
@@ -91,7 +94,9 @@ const PokemonDetailPage = () => {
                       <Link
                         to={move.url.replace("https://pokeapi.co/api/v2", "")}
                       >
-                        <p className={classes["content-sm"]}>{move.name}</p>
+                        <p className={classes["content-sm"]}>
+                          {humanize(move.name)}
+                        </p>
                       </Link>
                     </li>
                   ))}
