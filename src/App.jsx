@@ -7,6 +7,7 @@ import PokemonDetailPage from "./pages/PokemonDetail";
 import AbilityDetailPage from "./pages/AbilityDetail";
 import TypeDetailPage from "./pages/TypeDetail";
 import MoveDetailPage from "./pages/MoveDetail";
+import ErrorPage from "./pages/Error";
 
 import { pokemonLoader } from "./loaders/pokemonLoader";
 import { pokemonDetailLoader } from "./loaders/pokemonDetailLoader";
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

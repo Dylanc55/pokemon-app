@@ -48,10 +48,10 @@ main {
   background-color: #e2c799;
   padding: 1rem;
   text-align: center;
+  color: #9a3b3b;
 
   h3 {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-    color: #9a3b3b;
   }
 }
 
