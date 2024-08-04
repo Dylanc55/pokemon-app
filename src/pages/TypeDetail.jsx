@@ -27,7 +27,7 @@ const TypeDetailPage = () => {
                 const haveValue = !!value.length;
 
                 return (
-                  <>
+                  <div key={key}>
                     <h3>{title}</h3>
 
                     <Card>
@@ -48,7 +48,7 @@ const TypeDetailPage = () => {
                           ))}
                       </Grid>
                     </Card>
-                  </>
+                  </div>
                 );
               })}
 

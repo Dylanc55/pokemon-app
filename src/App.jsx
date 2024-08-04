@@ -14,6 +14,7 @@ import { pokemonDetailLoader } from "./loaders/pokemonDetailLoader";
 import { abilityDetailLoader } from "./loaders/abilityDetailLoader";
 import { typeDetailLoader } from "./loaders/typeDetailLoader";
 import { moveDetailLoader } from "./loaders/moveDetailLoader";
+import SearchPage from "./pages/Search";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "search",
+        element: <SearchPage />,
       },
       {
         path: "pokemon",

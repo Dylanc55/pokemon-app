@@ -1,0 +1,46 @@
+.title {
+  font-size: 1.5rem;
+  margin-top: 4rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 4rem;
+
+  input {
+    width: 50%;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-width: 0;
+    font-size: 1.5rem;
+    color: #9a3b3b;
+    outline-color: #9a3b3b;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 1.25rem;
+    border-radius: 8px;
+    border-width: 0;
+    background: #c08261;
+    color: #fff;
+    transition: background-color 300ms ease;
+
+    &:hover {
+      background: #9a3b3b;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .search {
+    input {
+      width: 80%;
+    }
+  }
+}

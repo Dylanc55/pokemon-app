@@ -30,6 +30,17 @@ const MainNavigation = () => {
               Pokémon
             </NavLink>
           </li>
+
+          <li>
+            <NavLink
+              to="/search"
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
+            >
+              Search
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
