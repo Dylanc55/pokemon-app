@@ -59,7 +59,7 @@ const PokemonDetailPage = () => {
                         )}
                         className={classes["content-sm"]}
                       >
-                        {ability.name}
+                        <p>{ability.name}</p>
                       </Link>
                     </li>
                   ))}

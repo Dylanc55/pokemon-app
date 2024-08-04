@@ -1,7 +1,8 @@
 import { Suspense } from "react";
-import { Await, useLoaderData } from "react-router-dom";
+import { Await, useLoaderData, Link } from "react-router-dom";
 
 import Card from "../components/UI/Card";
+import Grid from "../components/UI/Grid";
 
 import classes from "./AbilityDetail.module.css";
 
@@ -12,7 +13,6 @@ const AbilityDetailPage = () => {
     <Suspense fallback={<p style={{ textAlign: "center" }}>Loading...</p>}>
       <Await resolve={ability}>
         {({ name, effect_entries, generation, pokemon }) => {
-          console.log("ability :>> ", ability);
           const entry = effect_entries.find(
             (entry) => entry.language.name === "en"
           );
@@ -22,25 +22,27 @@ const AbilityDetailPage = () => {
               <h1>{name.toUpperCase()}</h1>
 
               <Card>
-                <p>{entry.effect}</p>
+                <p className={classes.description}>{entry.effect}</p>
               </Card>
 
               <h3>Generation</h3>
 
               <Card>
-                <p>{generation.name}</p>
+                <p className={classes.content}>{generation.name}</p>
               </Card>
 
               <h3>Pokémon</h3>
 
               <Card>
-                <ul>
+                <Grid>
                   {pokemon.map(({ pokemon }) => (
                     <li key={pokemon.name}>
-                      <p>{pokemon.name}</p>
+                      <Link to={`/pokemon/${pokemon.name}`}>
+                        <p className={classes.content}>{pokemon.name}</p>
+                      </Link>
                     </li>
                   ))}
-                </ul>
+                </Grid>
               </Card>
             </section>
           );
