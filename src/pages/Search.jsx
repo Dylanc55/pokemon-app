@@ -8,7 +8,7 @@ const SearchPage = () => {
   const navigate = useNavigate();
 
   const handleChange = (event) => {
-    const name = event.target.value.toLowerCase().trim();
+    const name = event.target.value.toLowerCase().replaceAll(" ", "-").trim();
 
     setPokemon(name);
   };
