@@ -29,9 +29,11 @@ const MoveDetailPage = () => {
             <section className={classes.move}>
               <h1>{name.toUpperCase()}</h1>
 
-              <Card>
-                <p className={classes.description}>{entry.effect}</p>
-              </Card>
+              {!!entry && (
+                <Card>
+                  <p className={classes.description}>{entry.effect}</p>
+                </Card>
+              )}
 
               <h3>Stats</h3>
 

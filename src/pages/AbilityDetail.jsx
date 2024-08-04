@@ -21,9 +21,11 @@ const AbilityDetailPage = () => {
             <section className={classes.ability}>
               <h1>{name.toUpperCase()}</h1>
 
-              <Card>
-                <p className={classes.description}>{entry.effect}</p>
-              </Card>
+              {!!entry && (
+                <Card>
+                  <p className={classes.description}>{entry.effect}</p>
+                </Card>
+              )}
 
               <h3>Generation</h3>
 
