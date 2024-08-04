@@ -19,7 +19,7 @@ const PokemonDetailPage = () => {
                 <div className={classes.placeholder}>
                   <img
                     src={sprites.front_default}
-                    alt={`image of the pokemon ${name}`}
+                    alt={`front image of the pokemon ${name}`}
                   />
                 </div>
 
@@ -28,7 +28,7 @@ const PokemonDetailPage = () => {
                 <div className={classes.placeholder}>
                   <img
                     src={sprites.back_default}
-                    alt={`image of the pokemon ${name}`}
+                    alt={`back image of the pokemon ${name}`}
                   />
                 </div>
               </section>
@@ -72,7 +72,11 @@ const PokemonDetailPage = () => {
                 <Grid>
                   {types.map(({ type }) => (
                     <li key={type.name} className={classes.item}>
-                      <p className={classes["content-sm"]}>{type.name}</p>
+                      <Link
+                        to={type.url.replace("https://pokeapi.co/api/v2", "")}
+                      >
+                        <p className={classes["content-sm"]}>{type.name}</p>
+                      </Link>
                     </li>
                   ))}
                 </Grid>
