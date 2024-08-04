@@ -1,6 +1,11 @@
 .ability {
   font-size: 1.25rem;
   color: #9a3b3b;
+
+  a:hover {
+    color: #9a3b3b;
+    text-decoration: underline;
+  }
 }
 
 .description {

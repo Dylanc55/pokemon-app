@@ -13,6 +13,11 @@
 .item {
   text-align: center;
   color: #242424;
+
+  a:hover {
+    color: #9a3b3b;
+    text-decoration: underline;
+  }
 }
 
 .title {
