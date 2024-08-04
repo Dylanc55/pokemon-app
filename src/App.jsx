@@ -6,11 +6,13 @@ import PokemonPage from "./pages/Pokemon";
 import PokemonDetailPage from "./pages/PokemonDetail";
 import AbilityDetailPage from "./pages/AbilityDetail";
 import TypeDetailPage from "./pages/TypeDetail";
+import MoveDetailPage from "./pages/MoveDetail";
 
 import { pokemonLoader } from "./loaders/pokemonLoader";
 import { pokemonDetailLoader } from "./loaders/pokemonDetailLoader";
 import { abilityDetailLoader } from "./loaders/abilityDetailLoader";
 import { typeDetailLoader } from "./loaders/typeDetailLoader";
+import { moveDetailLoader } from "./loaders/moveDetailLoader";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,11 @@ const router = createBrowserRouter([
         path: "type/:id",
         element: <TypeDetailPage />,
         loader: typeDetailLoader,
+      },
+      {
+        path: "move/:id",
+        element: <MoveDetailPage />,
+        loader: moveDetailLoader,
       },
     ],
   },

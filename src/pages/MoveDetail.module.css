@@ -1,0 +1,14 @@
+.type {
+  font-size: 1.25rem;
+  color: #9a3b3b;
+}
+
+.description {
+  font-weight: 700;
+  text-align: left;
+}
+
+.content {
+  font-size: 1rem;
+  font-weight: 700;
+}

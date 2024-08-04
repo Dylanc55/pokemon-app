@@ -88,7 +88,11 @@ const PokemonDetailPage = () => {
                 <Grid>
                   {moves.map(({ move }) => (
                     <li key={move.name} className={classes.item}>
-                      <p className={classes["content-sm"]}>{move.name}</p>
+                      <Link
+                        to={move.url.replace("https://pokeapi.co/api/v2", "")}
+                      >
+                        <p className={classes["content-sm"]}>{move.name}</p>
+                      </Link>
                     </li>
                   ))}
                 </Grid>
