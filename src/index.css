@@ -43,6 +43,7 @@ a {
 main {
   max-width: 60rem;
   min-width: 375px;
+  min-height: calc(100vh - 88px);
   margin: 0 auto;
   background-color: #e2c799;
   padding: 1rem;
@@ -51,5 +52,11 @@ main {
   h3 {
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: #9a3b3b;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    min-height: calc(100vh - 72px);
   }
 }
