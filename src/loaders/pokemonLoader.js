@@ -10,6 +10,6 @@ export const pokemonLoader = async () => {
 
     return response;
   } catch (error) {
-    throw json({ message: "Something went wrong" });
+    throw json({ message: error.message || "Something went wrong" });
   }
 };

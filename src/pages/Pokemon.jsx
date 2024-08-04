@@ -1,5 +1,9 @@
 import { Link, useLoaderData } from "react-router-dom";
 
+import Grid from "../components/UI/Grid";
+
+import classes from "./Pokemon.module.css";
+
 const PokemonPage = () => {
   const { results: items } = useLoaderData();
 
@@ -7,13 +11,13 @@ const PokemonPage = () => {
     <>
       <h1>Original Pokémon</h1>
 
-      <ul className="pokemon-list">
+      <Grid className={classes.grid}>
         {items.map(({ name }) => (
-          <li className="pokemon-item" key={name}>
+          <li className={classes.item} key={name}>
             <Link to={`/pokemon/${name}`}>{name}</Link>
           </li>
         ))}
-      </ul>
+      </Grid>
     </>
   );
 };

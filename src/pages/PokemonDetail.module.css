@@ -1,0 +1,33 @@
+.name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.placeholder {
+  width: 96px;
+  height: 96px;
+}
+
+.item {
+  text-align: center;
+  color: #242424;
+}
+
+.title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+}
+
+.content-lg {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #9a3b3b;
+}
+
+.content-sm {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #9a3b3b;
+}

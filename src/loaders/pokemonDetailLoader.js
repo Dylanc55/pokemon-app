@@ -10,7 +10,7 @@ const loadDetail = async (name) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    throw json({ message: "Something went wrong" });
+    throw json({ message: error.message || "Something went wrong" });
   }
 };
 

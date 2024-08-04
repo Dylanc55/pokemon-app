@@ -1,16 +1,20 @@
 import { NavLink } from "react-router-dom";
 
+import classes from "./MainNavigation.module.css";
+
 const MainNavigation = () => {
   return (
-    <header>
-      <nav>
+    <header className={classes.header}>
+      <nav className={classes.nav}>
         <h3>Pokémon</h3>
 
-        <ul>
+        <ul className={classes.list}>
           <li>
             <NavLink
               to="/"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
             >
               Home
             </NavLink>
@@ -19,7 +23,9 @@ const MainNavigation = () => {
           <li>
             <NavLink
               to="/pokemon"
-              className={({ isActive }) => (isActive ? "active" : undefined)}
+              className={({ isActive }) =>
+                isActive ? classes.active : undefined
+              }
             >
               Pokémon
             </NavLink>

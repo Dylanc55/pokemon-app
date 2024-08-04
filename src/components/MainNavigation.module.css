@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  background-color: #9a3b3b;
+  font-size: 1.5rem;
+
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 0 1rem;
+  min-width: 375px;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  a:hover {
+    color: #ffaf00;
+    transition: color 300ms ease;
+  }
+}
+
+.active {
+  color: #ffaf00;
+  transition: color 300ms ease;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    font-size: 1rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+}

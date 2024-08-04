@@ -1,9 +1,11 @@
+import classes from "./Home.module.css";
+
 const HomePage = () => {
   return (
-    <section className="home-page">
-      <img src="pokemon.svg" alt="" />
-      <h1>Welcome!</h1>
-      <p>Browse all the original Pokémon</p>
+    <section className={classes.home}>
+      <img src="pokemon.svg" alt="" className={classes.image} />
+      <h1 className={classes.title}>Welcome!</h1>
+      <p className={classes.detail}>Browse all the original Pokémon</p>
     </section>
   );
 };

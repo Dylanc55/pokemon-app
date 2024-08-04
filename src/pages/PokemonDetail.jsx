@@ -1,5 +1,10 @@
 import { Suspense } from "react";
-import { Await, useLoaderData } from "react-router-dom";
+import { Await, Link, useLoaderData } from "react-router-dom";
+
+import Card from "../components/UI/Card";
+import Grid from "../components/UI/Grid";
+
+import classes from "./PokemonDetail.module.css";
 
 const PokemonDetailPage = () => {
   const { detail } = useLoaderData();
@@ -10,8 +15,8 @@ const PokemonDetailPage = () => {
         {({ name, sprites, stats, abilities, moves, types }) => {
           return (
             <>
-              <section className="pokemon-detail-name">
-                <div className="image-placeholder">
+              <section className={classes.name}>
+                <div className={classes.placeholder}>
                   <img
                     src={sprites.front_default}
                     alt={`image of the pokemon ${name}`}
@@ -20,7 +25,7 @@ const PokemonDetailPage = () => {
 
                 <h1>{name.toUpperCase()}</h1>
 
-                <div className="image-placeholder">
+                <div className={classes.placeholder}>
                   <img
                     src={sprites.back_default}
                     alt={`image of the pokemon ${name}`}
@@ -30,44 +35,60 @@ const PokemonDetailPage = () => {
 
               <h3>Stats</h3>
 
-              <ul className="pokemon-detail-stats">
-                {stats.map(({ stat, base_stat }) => (
-                  <li key={stat.name}>
-                    <h4>{stat.name}</h4>
-                    <p>{base_stat}</p>
-                  </li>
-                ))}
-              </ul>
+              <Card>
+                <Grid>
+                  {stats.map(({ stat, base_stat }) => (
+                    <li key={stat.name} className={classes.item}>
+                      <h4 className={classes.title}>{stat.name}</h4>
+                      <p className={classes["content-lg"]}>{base_stat}</p>
+                    </li>
+                  ))}
+                </Grid>
+              </Card>
 
               <h3>Abilities</h3>
 
-              <ul className="pokemon-detail-abilities">
-                {abilities.map(({ ability }) => (
-                  <li key={ability.name}>
-                    <p>{ability.name}</p>
-                  </li>
-                ))}
-              </ul>
+              <Card>
+                <Grid>
+                  {abilities.map(({ ability }) => (
+                    <li key={ability.name} className={classes.item}>
+                      <Link
+                        to={ability.url.replace(
+                          "https://pokeapi.co/api/v2",
+                          ""
+                        )}
+                        className={classes["content-sm"]}
+                      >
+                        {ability.name}
+                      </Link>
+                    </li>
+                  ))}
+                </Grid>
+              </Card>
 
               <h3>Types</h3>
 
-              <ul className="pokemon-detail-types">
-                {types.map(({ type }) => (
-                  <li key={type.name}>
-                    <p>{type.name}</p>
-                  </li>
-                ))}
-              </ul>
+              <Card>
+                <Grid>
+                  {types.map(({ type }) => (
+                    <li key={type.name} className={classes.item}>
+                      <p className={classes["content-sm"]}>{type.name}</p>
+                    </li>
+                  ))}
+                </Grid>
+              </Card>
 
               <h3>Moves</h3>
 
-              <ul className="pokemon-detail-moves">
-                {moves.map(({ move }) => (
-                  <li key={move.name}>
-                    <p>{move.name}</p>
-                  </li>
-                ))}
-              </ul>
+              <Card>
+                <Grid>
+                  {moves.map(({ move }) => (
+                    <li key={move.name} className={classes.item}>
+                      <p className={classes["content-sm"]}>{move.name}</p>
+                    </li>
+                  ))}
+                </Grid>
+              </Card>
             </>
           );
         }}
