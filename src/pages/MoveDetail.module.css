@@ -1,14 +1,27 @@
-.type {
+.move {
   font-size: 1.25rem;
   color: #9a3b3b;
+}
+
+.title {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  color: #242424;
+  font-size: 1rem;
 }
 
 .description {
   font-weight: 700;
   text-align: left;
+  font-size: 1rem;
 }
 
 .content {
   font-size: 1rem;
+  font-weight: 700;
+}
+
+.content-lg {
+  font-size: 1.25rem;
   font-weight: 700;
 }
