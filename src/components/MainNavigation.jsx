@@ -1,8 +1,19 @@
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import SearchIcon from "./SearchIcon";
+
+import { setModalIsVisible } from "../store/ui";
 
 import classes from "./MainNavigation.module.css";
 
 const MainNavigation = () => {
+  const dispatch = useDispatch();
+
+  function handleOpenModal() {
+    dispatch(setModalIsVisible(true));
+  }
+
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
@@ -32,14 +43,9 @@ const MainNavigation = () => {
           </li>
 
           <li>
-            <NavLink
-              to="/search"
-              className={({ isActive }) =>
-                isActive ? classes.active : undefined
-              }
-            >
-              Search
-            </NavLink>
+            <button className={classes.search} onClick={handleOpenModal}>
+              <SearchIcon />
+            </button>
           </li>
         </ul>
       </nav>

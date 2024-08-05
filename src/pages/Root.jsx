@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import MainNavigation from "../components/MainNavigation";
+import PokemonSearch from "../components/PokemonSearch";
 
 const RootLayout = () => {
   return (
@@ -10,6 +11,7 @@ const RootLayout = () => {
       <main>
         <Outlet />
       </main>
+      <PokemonSearch />
     </>
   );
 };

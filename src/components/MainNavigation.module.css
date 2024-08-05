@@ -23,15 +23,27 @@
   align-items: center;
   gap: 2rem;
 
-  a:hover {
-    color: #ffaf00;
+  a {
+    color: white;
     transition: color 300ms ease;
+
+    &:hover,
+    &.active {
+      color: #ffaf00;
+    }
   }
 }
 
-.active {
-  color: #ffaf00;
-  transition: color 300ms ease;
+.search {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border-width: 0;
+  outline-width: 0;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 @media screen and (max-width: 480px) {
