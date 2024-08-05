@@ -16,6 +16,8 @@ const PokemonSearch = () => {
   const isModalVisible = useSelector((state) => state.ui.modalIsVisible);
 
   function handleCloseModal() {
+    setPokemon("");
+
     dispatch(setModalIsVisible(false));
   }
 
@@ -26,9 +28,9 @@ const PokemonSearch = () => {
   };
 
   const handleSearch = () => {
-    handleCloseModal();
-
     navigate("/pokemon/" + pokemon);
+
+    handleCloseModal();
   };
 
   const handleKeydown = (event) => {
@@ -51,6 +53,7 @@ const PokemonSearch = () => {
           placeholder="name"
           onChange={handleChange}
           onKeyDown={handleKeydown}
+          value={pokemon}
         />
 
         <button onClick={handleSearch}>Search</button>
