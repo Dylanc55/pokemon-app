@@ -22,13 +22,13 @@ const PokemonSearch = () => {
   }
 
   const handleChange = (event) => {
-    const name = event.target.value.toLowerCase().replaceAll(" ", "-").trim();
-
-    setPokemon(name);
+    setPokemon(event.target.value);
   };
 
   const handleSearch = () => {
-    navigate("/pokemon/" + pokemon);
+    const name = pokemon.toLowerCase().replaceAll(" ", "-").trim();
+
+    navigate("/pokemon/" + name);
 
     handleCloseModal();
   };
