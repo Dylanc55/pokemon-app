@@ -10,7 +10,8 @@ const ErrorPage = () => {
   let message = "Something went wrong! Please try again";
 
   if (isRouteErrorResponse(error)) {
-    console.log("error :>> ", error);
+    title = "A route error occurred!";
+    message = error.data;
   }
 
   return (
