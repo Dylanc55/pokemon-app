@@ -31,6 +31,12 @@ const PokemonSearch = () => {
     navigate("/pokemon/" + pokemon);
   };
 
+  const handleKeydown = (event) => {
+    if (event.key !== "Enter") return;
+
+    handleSearch();
+  };
+
   return (
     <Modal open={isModalVisible} onClose={handleCloseModal}>
       <div className={classes.close}>
@@ -40,7 +46,12 @@ const PokemonSearch = () => {
       <h3 className={classes.title}>Search for a Pokémon</h3>
 
       <div className={classes.search}>
-        <input type="text" placeholder="name" onChange={handleChange} />
+        <input
+          type="text"
+          placeholder="name"
+          onChange={handleChange}
+          onKeyDown={handleKeydown}
+        />
 
         <button onClick={handleSearch}>Search</button>
       </div>
